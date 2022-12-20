@@ -4,5 +4,5 @@ module.exports = {
   appId: LC_ID,
   appKey: LC_KEY,
   masterKey: LC_MKEY,
-  serverURL:LC_SERVER
+  serverURL: LC_SERVER
 }
