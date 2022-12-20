@@ -1,0 +1,35 @@
+<style>
+  body {
+    background: #13111c;
+  }
+
+  .D-exit,
+  .D-close,
+  .D-btn-login:nth-last-child(1) {
+    display: none;
+  }
+</style>
+<div id="Discuss-Comments"></div>
+<script>
+  /**
+   * 动态添加JavaScript
+   * @param {*} url 资源地址
+   * @param {*} callback 回调方法
+   */
+  function getScript(url, callback) {
+    var script = document.createElement('script')
+    script.src = url
+    script.onload = function () {
+      script.onload = null
+      callback()
+    }
+    document.head.appendChild(script)
+  }
+
+  getScript(location.href + '/Discuss.admin.js', () => {
+    DiscussAdmin.init({
+      el: '#Discuss-Comments',
+      serverURLs: location.href
+    })
+  })
+</script>
